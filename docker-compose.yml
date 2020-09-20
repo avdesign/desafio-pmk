@@ -1,0 +1,31 @@
+version: '3'
+
+services: 
+  # Php Ngnix Service
+  pmk_app:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/usr/share/nginx
+    networks:
+      - pmk_network
+
+  # Mysql
+  pmk_mysql:
+    image: mysql:5.7.26
+    ports:
+      - "3306:3306"
+    volumes:
+      - .docker/dbdata:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: desafio_pmk
+      MYSQL_ROOT_PASSWORD: secret         
+    networks:
+      - pmk_network
+
+#Docker Networks
+networks:
+  pmk_network:
+    driver: bridge     
+  
