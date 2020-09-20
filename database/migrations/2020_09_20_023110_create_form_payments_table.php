@@ -15,6 +15,7 @@ class CreateFormPaymentsTable extends Migration
     {
         Schema::create('form_payments', function (Blueprint $table) {
             $table->id();
+            $table->string('title', 30);
             $table->timestamps();
         });
     }

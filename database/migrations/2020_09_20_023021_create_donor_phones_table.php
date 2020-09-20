@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDonorFormPaymentTable extends Migration
+class CreateDonorPhonesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,16 @@ class CreateDonorFormPaymentTable extends Migration
      */
     public function up()
     {
-        Schema::create('donor_form_payment', function (Blueprint $table) {
+        Schema::create('donor_phones', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('donor_id');
+            $table->string('number', 20);
             $table->timestamps();
+
+            $table->foreign('donor_id')
+                ->references('id')
+                ->on('donors')
+                ->onDelele('cascade');
         });
     }
 
@@ -26,6 +33,6 @@ class CreateDonorFormPaymentTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('donor_form_payment');
+        Schema::dropIfExists('donor_phones');
     }
 }

@@ -14,7 +14,8 @@ class CreateDonationIntervalsTable extends Migration
     public function up()
     {
         Schema::create('donation_intervals', function (Blueprint $table) {
-            $table->id();
+            $table->id();            
+            $table->string('title', 30);
             $table->timestamps();
         });
     }

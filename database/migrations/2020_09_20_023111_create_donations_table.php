@@ -15,7 +15,19 @@ class CreateDonationsTable extends Migration
     {
         Schema::create('donations', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('donor_id');
+            $table->unsignedBigInteger('form_payment_id');
+            $table->decimal('value', 8,2);
             $table->timestamps();
+
+            $table->foreign('donor_id')
+                ->references('id')
+                ->on('donors');
+
+            $table->foreign('form_payment_id')
+                ->references('id')
+                ->on('form_payments');
+
         });
     }
 
