@@ -9,6 +9,5 @@ $factory->define(Donation::class, function (Faker $faker) {
     return [
         'form_payment_id' => rand(1,2),
         'value' => $faker->numberBetween(100, 200)
-
     ];
 });

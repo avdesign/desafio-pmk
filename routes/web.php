@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', 'Web\DonorController@index')->name('donors.index');
+Route::post('/', 'Web\DonorController@data')->name('donors.data');
