@@ -22,9 +22,18 @@ $factory->define(Donor::class, function (Faker $faker) {
 
     return [
         'donation_interval_id' => rand(1, 4), 
+        'payment_day' => rand(1, 31),
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
         'document' => $faker->cpf,
-        'birth_date' => $faker->dateTimeThisCentury->format('Y-m-d') 
+        'address' => $faker->streetPrefix.' '.$faker->name,
+        'number' => rand(30, 1500),
+        'complement' => $faker->secondaryAddress,
+        'district' => $faker->country,
+        'city' => $faker->lastName,
+        'state' => $faker->state,
+        'country' => 'Brasil',
+        'postcode' => $faker->postcode,
+        'birth_date' => $faker->dateTimeThisCentury->format('Y-m-d'),
     ];
 });

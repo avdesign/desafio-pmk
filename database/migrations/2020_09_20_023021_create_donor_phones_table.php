@@ -16,6 +16,8 @@ class CreateDonorPhonesTable extends Migration
         Schema::create('donor_phones', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('donor_id');
+            $table->string('country_code', 10);
+            $table->string('code', 10);
             $table->string('number', 20);
             $table->timestamps();
 

@@ -17,9 +17,18 @@ class CreateDonorsTable extends Migration
             $table->id();
             $table->uuid('uuid');
             $table->unsignedBigInteger('donation_interval_id');
+            $table->tinyInteger('payment_day');
             $table->string('name');
             $table->string('email');
             $table->string('document');
+            $table->string('address');
+            $table->string('number', 30);
+            $table->string('complement', 50)->nullable;
+            $table->string('district');
+            $table->string('city');
+            $table->string('state');
+            $table->string('country');
+            $table->string('postcode');
             $table->date('birth_date');
             $table->timestamps();
 
