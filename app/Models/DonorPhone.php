@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class DonorPhone extends Model
 {
-    protected $fillable = ['donor_id', 'number']
+    protected $fillable = ['donor_id', 'number'];
 }

@@ -5,7 +5,7 @@ services:
   pmk_app:
     build: .
     ports:
-      - "8080:80"
+      - "8000:80"
     volumes:
       - ./:/usr/share/nginx
     networks:
@@ -20,10 +20,28 @@ services:
       - .docker/dbdata:/var/lib/mysql
     environment:
       MYSQL_DATABASE: desafio_pmk
-      MYSQL_ROOT_PASSWORD: secret         
+      MYSQL_ROOT_PASSWORD: secret      
     networks:
       - pmk_network
 
+  pmk_pma:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8080:80"
+    #volumes:
+      #- .docker/src/sessions:/sessions
+    environment:
+      PMA_ARBITRARY: 1
+      PMA_HOST: pmk_mysql
+      PMA_USER: root
+      PMA_PASSWORD: secret
+      PHP_UPLOAD_MAX_FILESIZE: 1G
+      PHP_MAX_INPUT_VARS: 1G
+    restart: always
+    networks:
+      - pmk_network
+
+      
 #Docker Networks
 networks:
   pmk_network:

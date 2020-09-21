@@ -23,12 +23,14 @@ class CreateDonorAddressesTable extends Migration
             $table->string('city');
             $table->string('state');
             $table->string('country');
+            $table->string('postcode');
             $table->timestamps();
             
             $table->foreign('donor_id')
                 ->references('id')
                 ->on('donors')
                 ->onDelele('cascade');
+                
         });
     }
 
