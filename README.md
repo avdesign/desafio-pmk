@@ -57,6 +57,16 @@ Por fim vamos adicionar as tabelas e colunas no banco de dados com o comando `ph
 - [Iniciar o servedor local](http://localhost:8000).
 - [Iniciar o phpMyAdmin](http://localhost:8080).
 
+### Observação
+Como tive que formatar minha maquina no sábado, atrasou meu lado! 
+Por se tratar de um CRUD simples, hoje eu já termino.
+
+
+Qualquer dúvida, permaneço a disposição.
+
+Whatsapp: 11 9320-2772
+ 
+
 
 
 
