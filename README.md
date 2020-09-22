@@ -24,7 +24,7 @@ Instalar as dependências do Laravel
 ````
 $ docker run --rm -v $(pwd):/app composer install
 ````
-Use o docker-compose para instalalar os containers e images: PHP 7.3 /NGINX/MYSQL/PHPMYADMIN
+Use o `docker-compose` para instalalar os containers e images:
 ````
 $ docker-compose up -d
 ````
